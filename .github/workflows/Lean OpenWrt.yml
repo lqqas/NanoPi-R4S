@@ -195,15 +195,15 @@ jobs:
           name: bin-archive
           path: openwrt/bin
           
-      - name: Deploy Packages-Server
-        if: env.GENERATE_STATUS == 'success'
-        run: |
-          mkdir -p server/web/snapshots/targets/$TARGET/$SUBTARGET
-          cp -r $OPENWRTROOT/bin/packages server/web/snapshots
-          cp -r $OPENWRTROOT/bin/targets/$TARGET/$SUBTARGET/packages server/web/snapshots/targets/$TARGET/$SUBTARGET
-          mv server packages-server
-          zip -qrm packages-server.zip packages-server
-          mv packages-server.zip $OPENWRTROOT/bin/targets/$TARGET/$SUBTARGET
+     # - name: Deploy Packages-Server
+      #  if: env.GENERATE_STATUS == 'success'
+       # run: |
+        #  mkdir -p server/web/snapshots/targets/$TARGET/$SUBTARGET
+         # cp -r $OPENWRTROOT/bin/packages server/web/snapshots
+         # cp -r $OPENWRTROOT/bin/targets/$TARGET/$SUBTARGET/packages server/web/snapshots/targets/$TARGET/$SUBTARGET
+         # mv server packages-server
+         # zip -qrm packages-server.zip packages-server
+         # mv packages-server.zip $OPENWRTROOT/bin/targets/$TARGET/$SUBTARGET
 
       - name: Organize Files
         id: organize
@@ -275,7 +275,7 @@ jobs:
         uses: dev-drprasad/delete-older-releases@v0.1.0
         if: env.UPLOAD_RELEASE == 'true' && !cancelled()
         with:
-          keep_latest: 2
+          keep_latest: 5
           delete_tags: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
