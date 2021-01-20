@@ -3,7 +3,6 @@
 ## Tips
 * Default Gateway: 192.168.2.1
 * Default Password: password
-* Update frequency: week
 * At least 64G flash disk is required
 
 ## Features
