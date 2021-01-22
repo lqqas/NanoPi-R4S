@@ -3,7 +3,7 @@
 ## Tips
 * Default Gateway: 192.168.2.1
 * Default Password: password
-* At least 64G flash disk is required
+* At least 16G flash disk is required
 
 ## Features
 * [SuLingGG/OpenWrt-Rpi/README.md](https://github.com/SuLingGG/OpenWrt-Rpi/blob/main/README.md)
